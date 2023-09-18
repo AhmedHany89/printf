@@ -10,7 +10,7 @@ int _printstring(char *str)
 	int nump = 0;
 
 	if (str == NULL)
-		return (-1);
+		str = "(null)";
 	nump = _writing(str, strlen(str));
 	return (nump);
 }
