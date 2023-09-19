@@ -9,9 +9,9 @@
  */
 int _printunsign(unsigned int n)
 {
-	int nump = 0;
+	int len = 0, h = 0, nump = 0;
 	char *str;
-	unsigned int i = n, len = 0, y = 0, z = n;
+	unsigned int i = n, z = n;
 
 	while (i > 0)
 	{
@@ -19,17 +19,17 @@ int _printunsign(unsigned int n)
 		len++;
 	}
 	str = malloc((len + 1) * sizeof(char));
-	y = len - 1;
 	if (str == NULL)
 		return (-1);
+	h = len - 1;
 	memset(str, '\0', (len + 1));
 	if (n == 0)
-		str[0] = '0';
+		str[0] = 48;
 	while (z > 0)
 	{
-		str[y] = (z % 10) + 48;
+		str[h] = (z % 10) + 48;
 		z = z / 10;
-		y--;
+		h--;
 	}
 	nump = _writing(str, strlen(str));
 	free(str);

@@ -8,13 +8,13 @@
  */
 int _printoctal(unsigned int b)
 {
-	int nump = 0;
-	unsigned int i, len = 0, r = b, n = b;
+	unsigned int u = b, n = b;
+	int i, len = 0, nump = 0;
 	char *str;
 
-	while (r > 0)
+	while (u > 0)
 	{
-		r = r / 8;
+		u = u / 8;
 		len++;
 	}
 	str = malloc(sizeof(char) * (len + 1));

@@ -11,19 +11,20 @@
  */
 int _specifier(va_list list, const char *str, int *index)
 {
-	int nump = 0, y;
+	int nump = 0;
+	int z;
 	/**
 	* struct format d_type[] - struct
 	* Description: specifiers
 	*/
-	specify d_type[] = {
+	specify d_t[] = {
 		{'c', __printchar},
 		{'s', __printstring},
-		{'%', __printchar},
 		{'d', __printdecimal},
+		{'%', __printchar},
+		{'u', __printunsign},
 		{'i', __printdecimal},
 		{'b', __printbin},
-		{'u', __printunsign},
 		{'o', __printoctal},
 		{'x', __printhexs},
 		{'X', __printhexc},
@@ -31,12 +32,12 @@ int _specifier(va_list list, const char *str, int *index)
 	};
 	if (str[*index] == '%')
 	{
-		y = 0;
-		while (y < 10)
+		z = 0;
+		while (z < 10)
 		{
-			if (str[(*index) + 1] == d_type[y].c)
-				nump = nump + d_type[y].f(list);
-			y++;
+			if (str[(*index) + 1] == d_t[z].c)
+				nump = nump + d_t[z].f(list);
+			z++;
 		}
 		if (str[(*index) + 1] == '%')
 			nump = nump + __printpercent();

@@ -18,21 +18,21 @@ int _printf(const char *format, ...);
 int _specifier(va_list list, const char *str, int *index);
 int _printchar(char c);
 int _printstring(char *str);
-int _printdecimal(int n);
 int _printbin(int b);
+int _printdecimal(int n);
 int _writing(char *str, int ln);
 int _printunsign(unsigned int b);
 int _printoctal(unsigned int b);
-int _printhexs(unsigned int b);
 int _printhexc(unsigned int b);
 int __printchar(va_list list);
+int _printhexs(unsigned int b);
 int __printstring(va_list list);
+int __printoctal(va_list list);
+int __printunsign(va_list list);
 int __printdecimal(va_list list);
 int __printpercent(void);
-int __printunsign(va_list list);
-int __printbin(va_list list);
-int __printoctal(va_list list);
 int __printhexs(va_list list);
+int __printbin(va_list list);
 int __printhexc(va_list list);
 
 #endif

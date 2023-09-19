@@ -6,10 +6,10 @@
  */
 int __printchar(va_list list)
 {
-	int nump;
+	int x;
 
-	nump = _printchar(va_arg(list, int));
-	return (nump);
+	x = _printchar(va_arg(list, int));
+	return (x);
 }
 /**
  * __printpercent - prints percent
@@ -18,10 +18,10 @@ int __printchar(va_list list)
  */
 int __printpercent(void)
 {
-	int nump;
+	int x;
 
-	nump = _printchar('%');
-	return (nump);
+	x = _printchar('%');
+	return (x);
 }
 /**
  * __printstring - prints string
@@ -30,10 +30,10 @@ int __printpercent(void)
  */
 int __printstring(va_list list)
 {
-	int nump;
+	int x;
 
-	nump = _printstring(va_arg(list, char *));
-	return (nump);
+	x = _printstring(va_arg(list, char *));
+	return (x);
 }
 /**
  * __printdecimal - prints decimal
@@ -42,10 +42,10 @@ int __printstring(va_list list)
  */
 int __printdecimal(va_list list)
 {
-	int nump;
+	int x;
 
-	nump = _printdecimal(va_arg(list, int));
-	return (nump);
+	x = _printdecimal(va_arg(list, int));
+	return (x);
 }
 /**
  * __printbin - prints binary
