@@ -11,43 +11,39 @@
  */
 int _specifier(va_list list, const char *str, int *index)
 {
-	int nump = 0;
-
+	int nump = 0, y;
+	/**
+	* struct format d_type[] - struct
+	* Description: specifiers
+	*/
+	specify d_type[] = {
+		{'c', __printchar},
+		{'s', __printstring},
+		{'%', __printchar},
+		{'d', __printdecimal},
+		{'i', __printdecimal},
+		{'b', __printbin},
+		{'u', __printunsign},
+		{'o', __printoctal},
+		{'x', __printhexs},
+		{'X', __printhexc},
+		{'\0', NULL}
+	};
 	if (str[*index] == '%')
 	{
-		switch (str[(*index) + 1])
+		y = 0;
+		while (y < 10)
 		{
-			case 'c':
-				{
-					nump = nump + _printchar(va_arg(list, int));
-					(*index)++;
-					break;
-				}
-			case 's':
-				{
-					nump = nump + _printstring(va_arg(list, char *));
-					(*index)++;
-					break;
-				}
-			case '%':
-				{
-					nump = nump + _printchar('%');
-					(*index)++;
-					break;
-				}
-			case 'd':
-			case 'i':
-				{
-					nump = nump + _printdecimal(va_arg(list, int));
-					(*index)++;
-					break;
-				}
+			if (str[(*index) + 1] == d_type[y].c)
+				nump = nump + d_type[y].f(list);
+			y++;
 		}
+		if (str[(*index) + 1] == '%')
+			nump = nump + __printpercent();
+		(*index)++;
 	}
 	else
-	{
 		nump = nump + _printchar(str[*index]);
-	}
 	(*index)++;
 	return (nump);
 }
