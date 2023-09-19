@@ -8,9 +8,9 @@
  */
 int _printbin(int b)
 {
-	int nump = 0;
-	int i, len = 0, r = b, n = b, z;
-	char *str;
+	int i;
+	int len = 0, r = b, n = b, z,nump = 0;
+	char *s;
 
 	if (r < 0)
 		len = 32;
@@ -19,29 +19,29 @@ int _printbin(int b)
 		r = r / 2;
 		len++;
 	}
-	str = malloc(sizeof(char) * (len + 1));
-	i = len - 1;
-	if (str == NULL)
+	s = malloc(sizeof(char) * (len + 1));
+	if (s == NULL)
 		return (-1);
-	memset(str, '\0', (len + 1));
+	memset(s, '\0', (len + 1));
+	i = len - 1;
 	if (n < 0)
 	{
 		z = i;
 		while (z >= 0)
 		{
-			str[z] = '1';
+			s[z] = '1';
 			z--;
 		}
 	}
-	if (n == 0)
-		str[0] = '0';
 	while (n > 0 || n < 0)
 	{
-		str[i] = abs(n % 2) + 48;
+		s[i] = abs(n % 2) + 48;
 		n = n / 2;
 		i--;
 	}
-	nump = _writing(str, strlen(str));
-	free(str);
+        if (n == 0)
+                s[0] = '0';
+	nump = _writing(s, strlen(s));
+	free(s);
 	return (nump);
 }

@@ -6,10 +6,10 @@
  */
 int __printunsign(va_list list)
 {
-	int nump;
+	int n;
 
-	nump = _printunsign(va_arg(list, unsigned int));
-	return (nump);
+	n = _printunsign(va_arg(list, unsigned int));
+	return (n);
 }
 /**
  * __printoctal - prints octal
@@ -18,10 +18,10 @@ int __printunsign(va_list list)
  */
 int __printoctal(va_list list)
 {
-	int nump;
+	int n;
 
-	nump = _printoctal(va_arg(list, unsigned int));
-	return (nump);
+	n = _printoctal(va_arg(list, unsigned int));
+	return (n);
 }
 /**
  * __printhexs - prints hex
@@ -30,10 +30,10 @@ int __printoctal(va_list list)
  */
 int __printhexs(va_list list)
 {
-	int nump;
+	int n;
 
-	nump = _printhexs(va_arg(list, unsigned int));
-	return (nump);
+	n = _printhexs(va_arg(list, unsigned int));
+	return (n);
 }
 /**
  * __printhexc - prints HEX
@@ -42,8 +42,8 @@ int __printhexs(va_list list)
  */
 int __printhexc(va_list list)
 {
-	int nump;
+	int n;
 
-	nump = _printhexc(va_arg(list, unsigned int));
-	return (nump);
+	n = _printhexc(va_arg(list, unsigned int));
+	return (n);
 }
