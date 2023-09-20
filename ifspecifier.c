@@ -21,7 +21,6 @@ int _specifier(va_list list, const char *str, int *index)
 		{'c', __printchar},
 		{'s', __printstring},
 		{'d', __printdecimal},
-		{'%', __printchar},
 		{'u', __printunsign},
 		{'i', __printdecimal},
 		{'b', __printbin},
@@ -33,7 +32,7 @@ int _specifier(va_list list, const char *str, int *index)
 	if (str[*index] == '%')
 	{
 		z = 0;
-		while (z < 10)
+		while (z < 9)
 		{
 			if (str[(*index) + 1] == d_t[z].c)
 				nump = nump + d_t[z].f(list);
