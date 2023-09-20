@@ -9,7 +9,7 @@
 int _printbin(int b)
 {
 	int i;
-	int len = 0, r = b, n = b, z,nump = 0;
+	int len = 0, r = b, n = b, z, nump = 0;
 	char *s;
 
 	if (r < 0)
@@ -33,14 +33,17 @@ int _printbin(int b)
 			z--;
 		}
 	}
+	if (n == 0)
+	{
+		s[0] = '0';
+		s[1] = '\0';
+	}
 	while (n > 0 || n < 0)
 	{
 		s[i] = abs(n % 2) + 48;
 		n = n / 2;
 		i--;
 	}
-        if (n == 0)
-                s[0] = '0';
 	nump = _writing(s, strlen(s));
 	free(s);
 	return (nump);

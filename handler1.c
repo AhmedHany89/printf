@@ -13,7 +13,6 @@ int __printchar(va_list list)
 }
 /**
  * __printpercent - prints percent
- * @list: list of args
  * Return: int number printed
  */
 int __printpercent(void)
