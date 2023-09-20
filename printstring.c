@@ -17,7 +17,7 @@ int _printstring(char *str)
 	if (s == NULL)
 	{
 		free(s)
-		return (NULL);
+		return (-1);
 	}
 	free(s);
 	nump = _writing(str, strlen(str));
