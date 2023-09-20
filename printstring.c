@@ -9,7 +9,6 @@
 int _printstring(char *str)
 {
 	int nump = 0;
-	char *s;
 
 	if (str == NULL)
 		str = "(null)";
