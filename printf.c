@@ -17,6 +17,14 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 	while (format[i] != 0)
 	{
+		if (format[i] == '%')
+		{
+			if (format[i + 1] == '\0')
+			{
+				nump = -1;
+				break;
+			}
+		}		
 		nump = nump + _specifier(list, format, &i);
 	}
 	va_end(list);

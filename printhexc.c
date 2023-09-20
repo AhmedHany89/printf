@@ -3,7 +3,7 @@
 #include <math.h>
 #include <string.h>
 /**
- * gethexc - function called to print hex
+ * hexc - function called to print hex
  * @n: number
  * @y: index
  * @st: string
