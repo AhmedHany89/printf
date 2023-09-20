@@ -9,9 +9,24 @@
 int _printstring(char *str)
 {
 	int nump = 0;
+	char *s;
 
 	if (str == NULL)
+	{
 		str = "(null)";
-	nump = _writing(str, strlen(str));
-	return (nump);
+		nump = _writing(str, strlen(str));
+		return (nump);
+	}
+	else
+	{
+		s = malloc(sizeof(char) * strlen(str) + 1);
+		if (s == NULL)
+		{
+			free(s);
+			return(-1);
+		}
+		free(s);
+		nump = _writing(str, strlen(str));
+		return (nump);
+	}	
 }
