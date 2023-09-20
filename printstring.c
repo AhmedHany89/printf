@@ -13,13 +13,6 @@ int _printstring(char *str)
 
 	if (str == NULL)
 		str = "(null)";
-	s = malloc(sizeof(char) * strlen(str) + 1);
-	if (s == NULL)
-	{
-		free(s)
-		return (-1);
-	}
-	free(s);
 	nump = _writing(str, strlen(str));
 	return (nump);
 }
