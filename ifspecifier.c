@@ -32,23 +32,19 @@ int _specifier(va_list list, const char *str, int *index)
 	if (str[*index] == '%')
 	{
 		z = 0;
-		while (z < 9)
+		for (z = 0; z < 9; z++)
 		{
 			if (str[(*index) + 1] == d_t[z].c)
 			{
 				nump = nump + d_t[z].f(list);
-				(*index)++;
-				(*index)++;
+				(*index) = (*index) + 2;
 				return (nump);
 			}
-			z++;
 		}
 		if (str[(*index) + 1] == '%')
 		{
-			nump =  __printpercent();
-			(*index)++;	
-			(*index)++;
-			return (nump);
+			(*index) = (*index) + 2;
+			return (__printpercent());
 		}
 	}
 	nump =  _printchar(str[*index]);

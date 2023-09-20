@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 				nump = -1;
 				break;
 			}
-		}		
+		}
 		nump = nump + _specifier(list, format, &i);
 	}
 	va_end(list);
