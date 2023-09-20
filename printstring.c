@@ -14,10 +14,10 @@ int _printstring(char *str)
 	if (str == NULL)
 		str = "(null)";
 	s = malloc(sizeof(char) * strlen(str) + 1);
-	if(s == NULL)
+	if (s == NULL)
 	{
 		free(s)
-		return(NULL);
+		return (NULL);
 	}
 	free(s);
 	nump = _writing(str, strlen(str));
