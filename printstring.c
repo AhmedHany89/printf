@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+#include <string.h>
 /**
  *_printstring - function called to write string to writing fn
  * @str: a pointer to string to be written
@@ -8,9 +9,15 @@
 int _printstring(char *str)
 {
 	int nump = 0;
+	char *s;
 
 	if (str == NULL)
 		str = "(null)";
+	s = malloc(sizeof(char) * strlen(str) + 1);
+	if(s == NULL)
+	{
+		return(-1);
+	}
 	nump = _writing(str, strlen(str));
 	return (nump);
 }
